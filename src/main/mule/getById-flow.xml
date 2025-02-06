@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd">
+	<flow name="getById-flowFlow" doc:id="66522436-6014-4fa3-8e73-8d6a24deee22" >
+		<http:listener doc:name="Listener" doc:id="ff2e3c9a-8202-441f-9aaf-d8a02b875198" config-ref="HTTP_Listener_config" path="/user/{id}" allowedMethods="GET"/>
+		<set-payload value='#["User endpoint is working!"]' doc:name="Set Payload" doc:id="1032571a-f2fb-403e-8aba-35d213c6a98e" />
+		<logger level="INFO" doc:name="Logger" doc:id="e6847f7a-4f7d-4087-a417-c430220db59d" message="#[payload]"/>
+	</flow>
+</mule>
